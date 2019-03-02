@@ -1,0 +1,89 @@
+@font-face
+  font-family: Noah
+  src: url('../typo/Noah/Noah-Regular.ttf') format('TrueType'), url('../typo/Noah/Noah-Regular.otf') format('OpenType')
+  font-weight: 400
+
+@font-face
+  font-family: Noah
+  src: url('../typo/Noah/Noah-Bold.ttf') format('TrueType'), url('../typo/Noah/Noah-Bold.otf') format('OpenType')
+  font-weight: 700
+
+@font-face
+  font-family: GalanoGrotesqueAlt
+  src: url('../typo/GalanoGrotesque/GalanoGrotesqueAltDEMO-Bold.ttf') format('TrueType'), url('../typo/GalanoGrotesque/GalanoGrotesqueAltDEMO-Bold.otf') format('OpenType')
+  font-weight: 700
+
+@font-face
+  font-family: GalanoGrotesque
+  src: url('../typo/GalanoGrotesque/GalanoGrotesqueDEMO-Bold.ttf') format('TrueType'), url('../typo/GalanoGrotesque/GalanoGrotesqueDEMO-Bold.otf') format('OpenType')
+  font-weight: 700
+
+*
+  font-family: 'Noah'
+  color: $shark
+  font-size: 1em
+  line-height: 1.3
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, li
+  margin-top: 0
+  margin-bottom: 1rem
+  &:empty
+    display: none
+
+h1
+  &, *
+    font-family: 'GalanoGrotesqueAlt'
+    font-size: 5em
+    font-weight: 700
+
+h2
+  &, *
+    font-family: 'GalanoGrotesqueAlt'
+    font-size: 4em
+    font-weight: 700
+
+h3
+  &, *
+    font-family: 'GalanoGrotesqueAlt'
+    font-size: 3em
+    font-weight: 700
+
+h4
+  &, *
+    font-family: 'GalanoGrotesqueAlt'
+    font-size: 2em
+    font-weight: 700
+
+h5
+  &, *
+    font-family: 'Noah'
+    font-size: 1.25em
+    font-weight: 700
+
+p, li
+  margin-bottom: 0.875rem
+  &, *
+    font-family: 'Noah'
+    font-size: 1em
+    line-height: 1.3
+    font-weight: 400
+
+p, li, a, span, b, strong
+  &.small
+    &, *
+      font-size: 0.875em
+
+a
+  cursor: pointer
+  text-decoration: none
+  display: inline
+  font-weight: 700
+  &:hover
+    color: $purple
+    transition: all 300ms
+
+ul
+  padding-left: 1.2em
+
+strong, b, .bold
+  font-weight: 700
