@@ -10,8 +10,18 @@
     background: $white-1
     color: $shark
 
-.blue-bear
-  margin-bottom: -5px
+img
+  &.blue-bear
+    margin-bottom: -5px
+  &.web-mobile
+    border-bottom: 2px solid $white-1
+  &.sudo-cat
+    border-radius: 100%
+    border: 2px solid $white-1
+    max-width: 18em
+  &.footer
+    max-width: 8em
+    margin: 0 auto
 
 .home-hero
   background: linear-gradient($purple 30%, $blue)
@@ -21,3 +31,11 @@
   .hh-cta
     display: block
     margin-top: 2em
+
+.about
+  a.paul-link
+    color: $purple-2
+    transition: 300ms
+    border-bottom: 2px solid transparent
+    &:hover
+      border-bottom: 2px solid $purple-2
