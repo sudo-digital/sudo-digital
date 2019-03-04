@@ -74,14 +74,14 @@ class App extends Component {
 
         <div className='container-fluid header home-hero'>
           <div className='row middle-xs between-xs'>
-            <div className='col-md-2 col-md-offset-0 col-xs-8 col-xs-offset-2'>
+            <div className='col-md-2 col-xs-12 first-md center-xs'>
               <img
                 src={logo}
                 className='logo'
                 alt='Sudo Digital Logo'
                 />
             </div>
-            <div className='col-md-10 col-xs-12 end-xs'>
+            <div className='col-md-10 col-xs-12 end-md center-xs'>
               <nav>
                 <Link to='services' smooth={true} duration={500}>Services</Link>
                 <Link to='about' smooth={true} duration={500}>About</Link>
