@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link, Element} from 'react-scroll'
-import axios from 'axios'
 import logo from './logo.svg';
 import bear from './bear.svg'
 import illustration from './illustration.svg'
@@ -10,31 +9,59 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      email: '',
-      message: ''
+      showForm: true
     };
   }
 
-  handleSubmit = event => {
-    event.preventDefault();
+  submitForm = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
 
-    const user = {
-      name: this.state.name,
-      email: this.state.email,
-      message: this.state.message
-    };
+    fetch('https://hooks.zapier.com/hooks/catch/4591901/pxpqd2/', {
+      method: 'POST',
+      body: data,
+    });
+    this.setState({showForm: false})
+  }
 
-    axios.post(`https://hooks.zapier.com/hooks/catch/4591901/pxpqd2/`,
-      {
-        headers: {'Access-Control-Allow-Origin': '*'},
-        data: user
-      }
-    )
-    .then(res => {
-      console.log(res);
-      console.log(res.data);
-    })
+  displayForm = () => {
+    if (this.state.showForm === false) {
+      return (
+        <p className='large bold'>Thanks! We'll be in touch soon. <span role='img' aria-label='peace'>✌️</span></p>
+      )
+
+    } else {
+      return (
+        <form className='row' onSubmit={this.submitForm}>
+          <div className='col-md-6 col-xs-12'>
+            <label>Name</label>
+            <input
+              type='text'
+              name='name'
+              placeholder='Name...'
+              />
+          </div>
+          <div className='col-md-6 col-xs-12'>
+            <label>Email Address</label>
+            <input
+              type='email'
+              name='email'
+              placeholder='Email...'
+              />
+          </div>
+          <div className='col-xs-12'>
+            <label>Message</label>
+            <textarea
+              name='message'
+              placeholder='How can Sudo Digital help?'
+              />
+          </div>
+          <div className='col-xs-12'>
+            <input type='submit' value='Send Message'/>
+          </div>
+        </form>
+      )
+    }
   }
 
   render() {
@@ -86,7 +113,7 @@ class App extends Component {
             <div className='col-md-6 col-xs-12 p-t-4-md p-t-0-xs'>
               <p className='section'>services</p>
               <h3>Logo</h3>
-              <p className='bold large p-r-4-md p-r-0-xs'>You need a logo that stands out from the crowd that doesn't cost a fortune. We'll quickly create a logo for use anywhere it's needed.</p>
+              <p className='bold large p-r-4-md p-r-0-xs'>A logo should help you stand out from the crowd, while not costing you a fortune. We will quickly deliver a logo ready for print and digital placement.</p>
             </div>
             <div className='col-md-6 col-xs-12'>
               <img
@@ -110,7 +137,7 @@ class App extends Component {
             <div className='col-md-4 col-xs-12'>
               <p className='section p-t-4-md p-t-2-xs'>services</p>
               <h3>Web & Mobile</h3>
-              <p className='bold large p-r-4-md p-r-0-xs'>You need a logo that stands out from the crowd that doesn't cost a fortune. We'll quickly create a logo for use anywhere it's needed.</p>
+              <p className='bold large p-r-4-md p-r-0-xs'>The bulk of our experience is in user experience and product design for web and mobile products. We have designed apps government and Fortune 500 clients.</p>
             </div>
           </div>
         </div>
@@ -120,7 +147,7 @@ class App extends Component {
             <div className='col-md-6 col-xs-12'>
               <p className='section'>services</p>
               <h3>Illustration</h3>
-              <p className='bold large p-r-4-md p-r-0-xs'>You need a logo that stands out from the crowd that doesn't cost a fortune. We'll quickly create a logo for use anywhere it's needed.</p>
+              <p className='bold large p-r-4-md p-r-0-xs'>Icons are out and illustrations are in, all over the internet. More websites are incorporating delightful illustrations into the overall design. We can design something amazing for your business.</p>
             </div>
             <div className='col-md-6 col-xs-12'>
               <img
@@ -153,7 +180,7 @@ class App extends Component {
         </Element>
 
         <Element className='container-fluid pad-section contact' name='contact'>
-          <div className='row'>
+          <div className='row middle-xs'>
 
             <div className='col-md-6 col-xs-12'>
               <p className='section'>contact</p>
@@ -162,23 +189,7 @@ class App extends Component {
             </div>
 
             <div className='col-md-6 col-xs-12'>
-              <form className='row' onSubmit={this.handleSubmit}>
-                <div className='col-md-6 col-xs-12'>
-                  <label>Name</label>
-                  <input type='text' name='name' placeholder='Name...' />
-                </div>
-                <div className='col-md-6 col-xs-12'>
-                  <label>Email Address</label>
-                  <input type='email' name='email' placeholder='Email...' />
-                </div>
-                <div className='col-xs-12'>
-                  <label>Message</label>
-                  <textarea name='message' placeholder='How can Sudo Digital help?' />
-                </div>
-                <div className='col-xs-12'>
-                  <input type='submit' value='Send Message'/>
-                </div>
-              </form>
+              {this.displayForm()}
             </div>
 
           </div>
@@ -194,6 +205,7 @@ class App extends Component {
                 />
             </div>
           </div>
+          <p className='small center-text-xs m-t-1-xs'>© 2019 Sudo Digital LLC</p>
         </div>
 
       </div>
