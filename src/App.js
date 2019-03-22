@@ -5,64 +5,12 @@ import bear from './bear.svg'
 import illustration from './illustration.svg'
 import './sass/app.sass'
 
+const homeHero = {
+  'background': 'linear-gradient(#8352F9 30%, #53CCFF)',
+  'padding-top': '2em'
+}
+
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showForm: true
-    };
-  }
-
-  submitForm = (e) => {
-    e.preventDefault();
-    const data = new FormData(e.target);
-
-    fetch('https://hooks.zapier.com/hooks/catch/4591901/pxpqd2/', {
-      method: 'POST',
-      body: data,
-    });
-    this.setState({showForm: false})
-  }
-
-  displayForm = () => {
-    if (this.state.showForm === false) {
-      return (
-        <p className='large bold'>Thanks! We'll be in touch soon. <span role='img' aria-label='peace'>✌️</span></p>
-      )
-
-    } else {
-      return (
-        <form className='row' onSubmit={this.submitForm}>
-          <div className='col-md-6 col-xs-12'>
-            <label>Name</label>
-            <input
-              type='text'
-              name='name'
-              placeholder='Name...'
-              />
-          </div>
-          <div className='col-md-6 col-xs-12'>
-            <label>Email Address</label>
-            <input
-              type='email'
-              name='email'
-              placeholder='Email...'
-              />
-          </div>
-          <div className='col-xs-12'>
-            <label>Message</label>
-            <textarea
-              name='message'
-              placeholder='How can Sudo Digital help?'
-              />
-          </div>
-          <div className='col-xs-12'>
-            <input type='submit' value='Send Message'/>
-          </div>
-        </form>
-      )
-    }
-  }
 
   render() {
     const logos = '/images/sudo-digi-logos.png'
@@ -72,7 +20,7 @@ class App extends Component {
     return (
       <div className='app'>
 
-        <div className='container-fluid header home-hero'>
+        <div className='container-fluid header home-hero' style={homeHero}>
           <div className='row middle-xs between-xs'>
             <div className='col-md-2 col-xs-12 first-md center-xs'>
               <img
@@ -95,7 +43,7 @@ class App extends Component {
               <h4 className='light-text bold'>Design that thrives, online and off.</h4>
               <h5 className='light-text'>Design firm located in Denver, CO helping small and large brands with a variety of creative services.</h5>
               <div className='hh-cta m-b-0-md m-b-3-xs'>
-                <Link to='contact' className='btn btn-purple'>Start The Conversation</Link>
+                <Link to='contact' smooth={true} duration={500} className='btn btn-purple'>Start The Conversation</Link>
               </div>
             </div>
             <div className='col-md-6 p-t-7-md p-t-0-xs'>
@@ -172,7 +120,7 @@ class App extends Component {
             <div className='col-md-8 col-xs-12'>
               <p className='section blue'>about</p>
               <h3>Hello!</h3>
-              <p className='large bold'>Sudo Digital, named after my cat Sudo, is a design firm located in Denver, CO. The real person behind the designs is <a className='paul-link' href='https://www.paulballas.com/' target='_blank' rel='noopener noreferrer'>Paul Ballas</a>, a designer with over 11 years of professional experience.</p>
+              <p className='large bold'>Sudo Digital, named after my cat Sudo, is a design firm located in Denver, CO. The real person behind the designs is <a className='purple-link' href='https://www.paulballas.com/' target='_blank' rel='noopener noreferrer'>Paul Ballas</a>, a designer with over 11 years of professional experience.</p>
 
               <p className='large bold'>Your design won't be outsourced to another person or company. I design (and code if you want) 100% of the designs myself. I treat each project with the utmost care while also delivering quickly.</p>
             </div>
@@ -182,16 +130,12 @@ class App extends Component {
         <Element className='container-fluid pad-section contact' name='contact'>
           <div className='row middle-xs'>
 
-            <div className='col-md-6 col-xs-12'>
+            <div className='col-xs-12'>
               <p className='section'>contact</p>
               <h3>Let's Chat</h3>
-              <p className='large bold'>Fill out the form to start working with Sudo Digital.</p>
+              <p className='large bold'>To start working with us, send an email to <a className='purple-link' href='mailto:info@sudodigital.com'>info@sudodigital.com</a> and we'll be in touch shortly.
+              </p>
             </div>
-
-            <div className='col-md-6 col-xs-12'>
-              {this.displayForm()}
-            </div>
-
           </div>
         </Element>
 
