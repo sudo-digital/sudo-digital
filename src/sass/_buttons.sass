@@ -8,24 +8,19 @@
   box-sizing: border-box
   outline: none
   user-select: none
-  background: $white-2
+  background: $white
   color: $shark
-  padding: 0.5em
+  padding: 0.5rem
   border-radius: 4px
+  transition: all 400ms
   @media screen and (min-width: 752px)
     display: inline-block
     width: auto
   &:hover
     background: $white-3
 
-  &.btn-purple
+  &.primary
     background: $purple
     color: $white
     &:hover
-      background: $purple-1
-
-  &.btn-blue
-    background: $blue
-    color: $white
-    &:hover
-      background: $blue-1
+      background: darken($purple, 10%)

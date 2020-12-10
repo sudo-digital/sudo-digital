@@ -1,0 +1,23 @@
+.header
+  background: $black
+  a.nav
+    color: $white
+    font-family: 'Mendl', sans-serif
+    display: inline-block
+    font-weight: 600
+    margin-right: 2rem
+    text-decoration: none
+    padding: 1.25rem 0.5rem
+    font-size: 1.25rem
+    border-bottom: 3px solid transparent
+    transition: all 400ms
+    &:last-of-type
+      margin-right: 0
+    &:hover
+      background: $green
+      border-bottom: 3px solid $white
+      color: $green-dark
+    @media screen and (min-width: 752px)
+      margin-right: 3rem
+      &:last-of-type
+        margin-right: 3rem
