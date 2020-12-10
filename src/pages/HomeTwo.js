@@ -20,7 +20,7 @@ class HomeTwo extends React.Component {
     return(
       <div style={homePageBG} className='pg-home'>
 
-      
+
 
         <div className='container h-hero'>
           <div className='row center-xs'>
@@ -49,7 +49,7 @@ class HomeTwo extends React.Component {
             </div>
             <div className='col-md-6 col-xs-12 left-text-md center-text-xs'>
               <h2 className='type-larken p-t-3-md p-t-0-xs'>Extraordinary Apps</h2>
-              <p className='lg'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elementum diam ornare placerat finibus. Donec in pulvinar odio, ac facilisis lacus. Quisque maximus metus ac sem cursus, at varius lectus ornare. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec vel orci in arcu facilisis porttitor.</p>
+              <p className='lg'>You need an app that's not only beautiful and easy to use but also built with intentionality. Every design decision, no matter how small, can have a big impact on your app. Which is why we treat client apps like it's one of our children—with the utmost attention to detail.</p>
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@ class HomeTwo extends React.Component {
           <div className='row'>
             <div className='col-md-5 col-xs-12 left-text-md center-text-xs p-l-3-md p-l-0-xs'>
               <h2 className='type-larken p-t-3-md p-t-0-xs'>Beautiful Design</h2>
-              <p className='lg'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc elementum diam ornare placerat finibus. Donec in pulvinar odio, ac facilisis lacus.</p>
+              <p className='lg'>Have a great product needs a design refresh? You've come to the right place. We will help your brand stand out with fresh colors, iconography, and custom illustrations.</p>
             </div>
             <div className='col-md-7 col-xs-12'>
               <img
